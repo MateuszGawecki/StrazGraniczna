@@ -6,13 +6,13 @@ import java.util.List;
 public abstract class Proxy {
     public static String[] validateInput(String d) {
 
-        System.out.println(d);
         List<String> list = new ArrayList<>();
 
         String[] data = d.split(" ");
 
         for (int i = 0; i < data.length; i++) {
             data[i] = data[i].trim();
+            data[i] = data[i].substring(0,1).toUpperCase() + data[i].substring(1).toLowerCase();
             if (!data[i].isBlank()) list.add(data[i]);
         }
 
