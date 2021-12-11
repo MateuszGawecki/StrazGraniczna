@@ -23,11 +23,30 @@ public class Controller {
             System.out.println("Give data: ");
             String data = scanner.nextLine();
 
-            String[] validatedData= Proxy.validData(data);
+            if(data.isEmpty()) continue;
+            String[] validatedData= Proxy.validateInput(data);
 
             Flyweight flyweight = flyweightFactory.getFlyweight(validatedData);
 
-            System.out.println(flyweight);
+            boolean cont = true;
+            do{
+                System.out.println("Choose action:\n1 - show history\n2 - add coords\nelse - go back");
+
+                switch (Integer.parseInt(scanner.nextLine())){
+                    case 1:
+                        System.out.println(flyweight);
+                        break;
+                    case 2:
+                        System.out.println("x enter\ny enter");
+                        double x = Double.parseDouble(scanner.nextLine());
+                        double y = Double.parseDouble(scanner.nextLine());
+                        flyweight.addCoords(x,y);
+                        break;
+                    default:
+                        cont = false;
+                        break;
+                }
+            }while(cont);
         }
     }
 }

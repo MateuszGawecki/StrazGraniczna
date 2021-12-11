@@ -1,11 +1,10 @@
 package com.company.proxy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public abstract class Proxy {
-    public static String[] validData(String d) {
+    public static String[] validateInput(String d) {
 
         System.out.println(d);
         List<String> list = new ArrayList<>();

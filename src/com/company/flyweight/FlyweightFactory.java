@@ -13,10 +13,6 @@ public class FlyweightFactory {
 
     public Flyweight getFlyweight(String[] args){
         //TODO zwrócić referencię do Flyweight o podanym stringu a jeśli nie istnieje utworzyć i dodać
-        return getFlyweight(args, collection);
-    }
-
-    static Flyweight getFlyweight(String[] args, List<Flyweight> collection) {
         Flyweight flyweight = new Flyweight(args[0]);
 
         if(collection.contains(flyweight)){

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Flyweight extends FlyweightFactory{
     private final String givenName;
-    private List<Coords> coords;
+    private final List<Coords> coords;
 
     public Flyweight(String givenName) {
         this.givenName = givenName;
@@ -16,15 +16,8 @@ public class Flyweight extends FlyweightFactory{
         this.coords = new ArrayList<>();
     }
 
-    private void addCoords(double x, double y){
+    public void addCoords(double x, double y){
         this.coords.add(new Coords(x,y));
-    }
-
-    public Flyweight getFlyweight(String[] args){
-        //TODO zwrócić referencię do Flyweight o podanym stringu a jeśli nie istnieje utworzyć i dodać
-
-        return getFlyweight(args, collection);
-
     }
 
     @Override
