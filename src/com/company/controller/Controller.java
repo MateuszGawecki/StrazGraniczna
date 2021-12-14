@@ -24,7 +24,7 @@ public class Controller {
             String data = scanner.nextLine();
 
             if(data.isEmpty()) continue;
-            String[] validatedData= Proxy.validateInput(data);
+            String[] validatedData= Proxy.validateNames(data);
 
             Flyweight flyweight = flyweightFactory.getFlyweight(validatedData);
 
@@ -37,10 +37,10 @@ public class Controller {
                         System.out.println(flyweight);
                         break;
                     case 2:
-                        System.out.println("x enter\ny enter");
-                        double x = Double.parseDouble(scanner.nextLine());
-                        double y = Double.parseDouble(scanner.nextLine());
-                        flyweight.addCoords(x,y);
+                        System.out.println(" Podaj coord: x y");
+                        String inputCoords = scanner.nextLine();
+                        double[] coords = Proxy.validateCoords(inputCoords);
+                        flyweight.addCoords(coords[0],coords[1]);
                         break;
                     default:
                         cont = false;

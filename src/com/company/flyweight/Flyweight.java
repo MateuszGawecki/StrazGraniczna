@@ -22,10 +22,7 @@ public class Flyweight extends FlyweightFactory{
 
     @Override
     public String toString() {
-        return "Flyweight{" +
-                "givenName='" + givenName + '\'' +
-                ", coords=" + coords +
-                '}';
+        return "\ncoords=" + coords;
     }
 
     @Override
