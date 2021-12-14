@@ -37,10 +37,15 @@ public class Controller {
                         System.out.println(flyweight);
                         break;
                     case 2:
-                        System.out.println(" Podaj coord: x y");
+                        System.out.println(" Give coord: x y");
                         String inputCoords = scanner.nextLine();
-                        double[] coords = Proxy.validateCoords(inputCoords);
-                        flyweight.addCoords(coords[0],coords[1]);
+                        try{
+                            double[] coords = Proxy.validateCoords(inputCoords);
+                            flyweight.addCoords(coords[0],coords[1]);
+
+                        }catch(ArrayIndexOutOfBoundsException e) {
+                            System.out.println("Too less arguments.");
+                        }
                         break;
                     default:
                         cont = false;
