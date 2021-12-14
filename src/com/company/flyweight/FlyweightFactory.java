@@ -15,6 +15,8 @@ public class FlyweightFactory {
         //TODO zwrócić referencię do Flyweight o podanym stringu a jeśli nie istnieje utworzyć i dodać
         Flyweight flyweight = new Flyweight(args[0]);
 
+        System.out.print(flyweight.getGivenName()+ " ");
+
         if(collection.contains(flyweight)){
             Flyweight existingFlyweight = collection.get(collection.lastIndexOf(flyweight));
 

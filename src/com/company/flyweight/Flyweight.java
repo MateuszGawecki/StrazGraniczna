@@ -16,6 +16,10 @@ public class Flyweight extends FlyweightFactory{
         this.coords = new ArrayList<>();
     }
 
+    public String getGivenName() {
+        return givenName;
+    }
+
     public void addCoords(double x, double y){
         this.coords.add(new Coords(x,y));
     }

@@ -30,7 +30,7 @@ public class Controller {
 
             boolean cont = true;
             do{
-                System.out.println("Choose action:\n1 - show history\n2 - add coords\nelse - go back");
+                System.out.println("\nChoose action:\n1 - show history\n2 - add coords\nelse - go back");
 
                 switch (Integer.parseInt(scanner.nextLine())){
                     case 1:
